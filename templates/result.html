@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rock Paper Scissors</title>
+</head>
+<body>
+<div style="margin-left: auto; margin-right: auto;text-align: center"> 
+  <h1>Rock Paper Scissors</h1><p>
+	
+	
+  <p>Your choice:<strong> {{ user_choice }}</strong></p>
+  
+  <p>Computer's choice:<strong> {{ computer_choice }}</strong></p>
+<p>{{ result }}</p>
+  {% if result == "You won!" %}
+    <img src="../static/win.png">
+  {% elif result == "You lost!" %}
+    <img src="../static/lost.png">
+  {% else %}
+  <img src="../static/tie.png">
+  {% endif %} 
+  <h2></h2>
+  <h2><a href="/">Play again</a> </h2>
+</div>
+</body>
+</html>
