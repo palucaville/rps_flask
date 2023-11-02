@@ -1,29 +1,36 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Rock Paper Scissors</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+ 
+{% block content %}
 
-</head>
-<body>
 <div style="margin-left: auto; margin-right: auto;text-align: center"> 
-  <h1>Rock Paper Scissors</h1><p>
-	
-	
-  <p>Your choice:<strong> {{ user_choice }}</strong></p>
-  
-  <p>Computer's choice:<strong> {{ computer_choice }}</strong></p>
-<p>{{ result }}</p>
-  {% if result == "You won!" %}
-    <img src="../static/win.png">
-  {% elif result == "You lost!" %}
-    <img src="../static/lost.png">
-  {% else %}
-  <img src="../static/tie.png">
-  {% endif %} 
-  <h2></h2>
+ 	
+  <table width="20%" border="0" align="center">
+    <tr> 
+      <td> Your choice: {{ user_choice }}
+        {% if user_choice == "rock" %} <img src="../static/rock.png" width="70" height="70"> 
+        {% elif user_choice == "paper" %} <img src="../static/paper.png" width="70" height="70"> 
+        {% else %} <img src="../static/scissor.png" width="70" height="70"> {% endif 
+        %} </td>
+      <td> Computer's choice: {{ computer_choice }}
+        {% if computer_choice == "rock" %} <img src="../static/rock.png" width="70" height="70"> 
+        {% elif computer_choice == "paper" %} <img src="../static/paper.png" width="70" height="70"> 
+        {% else %} <img src="../static/scissor.png" width="70" height="70"> {% endif 
+        %} </td>
+    </tr>
+    <tr> 
+      <td colspan="2">  <h2>{{ result }}</h2>
+    {% if result == "You won!" %}
+      <img src="../static/win.png">
+    {% elif result == "You lost!" %}
+      <img src="../static/lost.png">
+    {% else %}
+    <img src="../static/tie.png">
+    {% endif %}</td>
+    </tr>
+  </table>
+
   <h2><a href="/">Play again</a> </h2>
 </div>
-</body>
-</html>
+<hr>
+
+{% endblock %}

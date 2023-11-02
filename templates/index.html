@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Rock Paper Scissors</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
+ 
+{% block content %}
 
-</head>
-<body>
-  
 <div style="margin-left: auto; margin-right: auto;text-align: center"> 
-   <img src="../static/rps.png" alt="Rock Paper Scissor Game" width="200" height="200"></img-src> 
-    <br>
-    <h2>Pick one</h2>
-  
-    <form action="/play" method="post">
-      <input type="radio" name="choice" value="rock">
-      <font color="#FF0000">Rock</font> <img src="../static/rock.png" alt="rock" width="70" height="70"><br>
-      <input type="radio" name="choice" value="paper">
-      <font color="#0000FF">Paper</font> <img src="../static/paper.png" alt="paper" width="70" height="70"><br>
-      <input type="radio" name="choice" value="scissors">
-    <font color="#00FF00">Scissor</font> <img src="../static/scissor.png" alt="scissor" width="70" height="70">
-<p></p>
-      <input type="submit" value="Play">
-    </form>
-  </div>
-  <p> </p> <p> </p> <hr>
-  <img src="../static/flask.png" height="60">
-  <img src="../static/python10.jpg" height="60">
-  <img src="../static/github_logo.jpg"  height="60"> 
+  <h2>last game: {{ last_result }}</h2>
+      
+  <form action="/play" method="post">
+    <input type="radio" name="choice" value="rock" id="rock">
+    <label for="rock">rock<img src="../static/rock.png" alt="rock" width="70" height="70" style="display: block; margin: 0 auto;"></label><br>
+    <input type="radio" name="choice" value="paper" id="paper">
+    <label for="paper">paper<img src="../static/paper.png" alt="paper" width="70" height="70" style="display: block; margin: 0 auto;"></label><br>
+    <input type="radio" name="choice" value="scissors" id="scissors">
+    <label for="scissors">scissors<img src="../static/scissor.png" alt="scissor" width="70" height="70" style="display: block; margin: 0 auto;"></label><br>
+    <input type="submit" value="Play" style="width: 100px; height: 50px;">
+  </form>
 
-</body>
-</html>
+  </div>
+{% endblock %}

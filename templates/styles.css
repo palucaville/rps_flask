@@ -1,0 +1,16 @@
+
+  body {
+      font-family: sans-serif;
+      margin-top: 40px;
+  }
+  nav a {
+            color: #d64161;
+            font-size: 28px;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+ img {
+            display: block;
+            margin: 0 auto;
+          }
+ 
