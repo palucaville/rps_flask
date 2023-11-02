@@ -5,7 +5,7 @@ hosted on https://rpsonline.pythonanywhere.com/
 
 #TODO
 
-error handling
+error handling  vv done
 
 scoring system
 
